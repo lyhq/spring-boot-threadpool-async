@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--如果不使用自定义线程池，可以直接使用下面这段标签-->
+    <!--
+    <task:executor id="WhifExecutor" pool-size="10"/>
+    -->
+    <import resource="threadPool.xml"/>
+    <!--<task:annotation-driven executor="WhifExecutor"/>-->
+
+    <context:component-scan base-package="com.you.async"/>
+
+</beans>
